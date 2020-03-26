@@ -1,5 +1,16 @@
 # Wrong source maps for node-script?
 
+Some additional notes:
+
+- It doesn't seem to make a difference whether exceptions are caught in CLJS
+  code or at the `node` process level
+- Much of this relies on the accuracy of `sourcemap.clj` as this is what I'm
+  using to verify if source maps are working. I first discovered this issue in
+  Sentry where source maps also were wrong (matching the output of
+  `sourcemap.clj`, so I think it's likely accurate).
+
+---
+
 Make a release build `{:target :node-library}` with `:simple` optimizations
 
 ```
