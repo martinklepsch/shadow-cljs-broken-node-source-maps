@@ -5,9 +5,17 @@
                  :output-to "out/main.js"
                  :compiler-options {:optimizations :simple
                                     ; :static-fns true
-                                    :source-map "functions/index.js.map"
+                                    :source-map "out/main.js.map"
                                     ; :reader-features #{:node}
                                     ; :fn-invoke-direct true
-                                    }
-                      }}}
-
+                                    }}
+          :script {:target :node-script
+                   :main source-maps.script/main
+                   :output-dir "out/compiled"
+                   :output-to "out/script.js"
+                   :compiler-options {:optimizations :simple
+                                      ; :static-fns true
+                                      :source-map "out/script.js.map"
+                                      ; :reader-features #{:node}
+                                      ; :fn-invoke-direct true
+                                      }}}}
