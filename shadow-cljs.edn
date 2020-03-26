@@ -1,0 +1,13 @@
+{:deps true
+ :builds {:main {:target :node-library
+                 :exports-var source-maps.core/exports
+                 :output-dir "out/compiled"
+                 :output-to "out/main.js"
+                 :compiler-options {:optimizations :simple
+                                    ; :static-fns true
+                                    :source-map "functions/index.js.map"
+                                    ; :reader-features #{:node}
+                                    ; :fn-invoke-direct true
+                                    }
+                      }}}
+
